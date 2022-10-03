@@ -1,8 +1,14 @@
 <?php
-    $host = '127.0.0.1';
+    // $host = '127.0.0.1';
+    // $db = 'myregistration';
+    // $user = 'root';
+    // $pass = '';
+
+
+    $host = 'remotemysql.com';
     $db = 'myregistration';
-    $user = 'root';
-    $pass = '';
+    $user = 'y8ZECaDYwo';
+    $pass = 'lYjmUjJxrV';
 
     $dsn = "mysql:host=$host;dbname=$db";
 
