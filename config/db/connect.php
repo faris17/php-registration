@@ -6,7 +6,7 @@
 
 
     $host = 'remotemysql.com';
-    $db = 'myregistration';
+    $db = 'y8ZECaDYwo';
     $user = 'y8ZECaDYwo';
     $pass = 'lYjmUjJxrV';
 
