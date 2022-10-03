@@ -11,7 +11,7 @@
     $pass = 'lYjmUjJxrV';
     $charset = 'utf8mb4';
 
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
 
     try {
         $pdo = new PDO($dsn, $user, $pass);
