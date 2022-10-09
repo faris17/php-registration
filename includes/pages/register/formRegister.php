@@ -3,7 +3,7 @@ $results = $crud->getSpecialist();
 ?>
 <h1 class="text-center">Registration</h1>
 
-<form id='formSubmit' class="m-5" method="post" action="?page=submitRegister">
+<form id='formSubmit' class="m-5" method="post" action="?page=submitRegister" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
         <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
@@ -15,7 +15,7 @@ $results = $crud->getSpecialist();
     </div>
 
     <div class="mb-3">
-        <label for="lastName" class="form-label">Gender</label>
+        <label for="gender" class="form-label">Gender</label>
             <label class="form-check-label" for="male">
             <input class="form-check-input" type="radio" value='male' name="gender" id="gender">
                 Male
@@ -52,7 +52,7 @@ $results = $crud->getSpecialist();
 
     <div class="mb-3">
         <label for="contactNumber" class="form-label">Contact Number</label>
-        <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="phoneNumber">
+        <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="phoneNumber" maxlength="12">
         <small id="helpNumber" class="form-text text-muted">We'll never share your number with anyone else.</small>
     </div>
 
@@ -61,9 +61,9 @@ $results = $crud->getSpecialist();
         <textarea class="form-control" id="aboutme" name="aboutme" rows="3" placeholder="Descript yourself"></textarea>
     </div>
 
-    <div class="mb-3">
-        <label for="contactNumber" class="form-label">Photo</label>
-        <input type="file" class="form-control" id="file" name="file">
+    <div class="custom-file mb-3">
+        <label for="contactNumber" class="form-label">Photo (Optional)</label>
+        <input type="file" class="form-control" id="file" name="avatar">
     </div>
 
     <button type='submit' name='submit' class='btn btn-primary form-control'>Save</button>

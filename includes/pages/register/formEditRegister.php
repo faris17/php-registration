@@ -10,7 +10,7 @@ else {
 ?>
 <h1 class="text-center"><?php echo $title; ?></h1>
 
-<form id='formSubmit' class="m-5" method="post" action="?page=submitRegister">
+<form id='formSubmit' class="m-5" method="post" action="?page=submitRegister" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
         <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" value="<?php echo $result['first_name']; ?>">
@@ -72,9 +72,11 @@ else {
 
     <div class="mb-3">
         <label for="contactNumber" class="form-label">Photo</label>
-        <input type="file" class="form-control" id="file" name="file">
+        <input type="file" class="form-control" id="avatar" name="avatar">
+        <img src="<?php echo empty($result["profile"]) ? "./assets/uploads/avatar.png" : "./assets/uploads/".$result['profile'];  ?>" class="rounded-circle mt-2" style="width:5%; height:5%" />
     </div>
     <input type="hidden" name="idbiodata" value="<?php echo $result['id']; ?>" />
+    <input type="hidden" name="oldfile" value="<?php echo $result['profile']; ?>" />
     <button type='submit' name='update' value="update" class='btn btn-primary form-control'>Update</button>
 </form>
 

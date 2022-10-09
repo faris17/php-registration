@@ -18,11 +18,22 @@ require_once 'includes/layouts/header.php';
         else if($page == 'viewDetail'){
             include "includes/pages/register/viewDetail.php";
         }
+        else if($page == 'viewSearch'){
+            include "includes/pages/register/viewSearch.php";
+        }
         else if($page == 'editRegister'){
             include "includes/pages/register/formEditRegister.php";
         }
-        
-        
+        else if($page == 'login'){
+            if($_SESSION['id'] != null){
+                header('Location: '.baseUrl.'?page=viewRegister');
+            }
+            include "includes/pages/login/login.php";
+        }
+        else if($page == 'logout'){
+            session_destroy();
+            header('Location: '.baseUrl.'/?page=login');
+        }
         else {
             echo 'no Page';
         }

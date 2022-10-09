@@ -3,12 +3,15 @@ $title = 'View Detail';
 if(!isset($_GET['id'])){
     echo "<h1 class='text-danger text-center mt-5'>Details not found</h1>";
     
-} else {
+} 
+else {
     $id = $_GET['id'];
     $result = $crud->getRegisterDetail($id);
 ?>
 
 <div class='container mt-5'>
+    <img src="<?php echo empty($result["profile"]) ? "./assets/uploads/avatar.png" : "./assets/uploads/".$result['profile'];  ?>" class="rounded-circle" style="width:10%; height:10%" />
+
     <h2><?php echo $title.' '.$result['first_name']; ?></h2>
     
     <div class="card" style="width:60%">
@@ -17,7 +20,7 @@ if(!isset($_GET['id'])){
                 <?php echo $result['first_name'].' '.$result['last_name']; ?>
             </h5>
             <h6 class="card-subtitle mb-2 text-muted">
-                <?php echo $result['first_name']; ?>
+                <?php echo $result['name_specialist']; ?>
             </h6>
             <p class="card-text">
             Date Of Birth: <?php echo date('d/m/Y', strtotime($result['date'])); ?>
@@ -34,6 +37,9 @@ if(!isset($_GET['id'])){
             About Me: <?php echo $result['aboutme']; ?>
             </p>
 
+            <a href="?page=viewRegister">
+                <button type='button' class='btn btn-info'>Back</button>
+            </a>
         </div>
     </div>
 </div>

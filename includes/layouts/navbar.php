@@ -14,10 +14,24 @@
         </li>
        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" method="get" action="?page=viewSearch">
+        <input type="hidden" name="page" value="viewSearch" />
+        <input class="form-control me-2" name="name" type="text" placeholder="Search" aria-label="Search">
+        <button type="submit" class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <div class="navbar-nav ml-auto">
+        <?php
+        if($_SESSION['username'] != ''){ ?>
+<a class="nav-item nav-link" href="<?php echo baseUrl.'?page=logout' ?>" onclick="return confirm('are you sure?')">
+        <button class="btn btn-primary"><?php echo $_SESSION['username'] ?> Logout</button>
+        </a>
+        <?php } else {
+        ?>
+        <a class="nav-item nav-link" href="<?php echo baseUrl.'?page=login' ?>">
+        <button class="btn btn-secondary"> Login</button>
+        </a>
+        <?php } ?>
+      </div>
     </div>
   </div>
 </nav>

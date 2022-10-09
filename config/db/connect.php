@@ -1,17 +1,19 @@
 <?php
-    // $host = '127.0.0.1';
+session_start();
+    // $host = 'localhost';
     // $db = 'myregistration';
     // $user = 'root';
     // $pass = '';
+    // $charset = 'utf8mb4';
 
 
-    $host = 'remotemysql.com';
+    $host = 'https://remotemysql.com';
     $db = 'y8ZECaDYwo';
     $user = 'y8ZECaDYwo';
     $pass = 'lYjmUjJxrV';
     $charset = 'utf8mb4';
 
-    $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
+    $dsn = "mysql:host=$host;dbname=$db";
 
     try {
         $pdo = new PDO($dsn, $user, $pass);
@@ -21,6 +23,11 @@
     }
 
     require_once 'crud.php';
+    require_once 'user.php';
 
     $crud = new crud($pdo);
+    $user = new user($pdo);
+
+    $user->insertUser('admin', 'password');
+    
 ?>
