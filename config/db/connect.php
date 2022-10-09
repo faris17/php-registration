@@ -7,7 +7,7 @@ session_start();
     // $charset = 'utf8mb4';
 
 
-    $host = 'https://remotemysql.com';
+    $host = 'remotemysql.com';
     $db = 'y8ZECaDYwo';
     $user = 'y8ZECaDYwo';
     $pass = 'lYjmUjJxrV';
